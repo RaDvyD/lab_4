@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Дашборд Plotly</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Додайте стилі за потреби -->
+</head>
+<body>
+    <h1>Дашборд з використанням Plotly</h1>
+
+    <!-- Форма для фільтрації -->
+    <form method="get">
+        <label for="year">Виберіть рік:</label>
+        <select name="year" id="year">
+            <option value="">Всі</option>
+            <option value="2021" {% if selected_year == '2021' %}selected{% endif %}>2021</option>
+            <option value="2022" {% if selected_year == '2022' %}selected{% endif %}>2022</option>
+            <option value="2023" {% if selected_year == '2023' %}selected{% endif %}>2023</option>
+        </select>
+
+        <label for="client">Виберіть клієнта:</label>
+        <input type="text" name="client" id="client" value="{{ selected_client }}" placeholder="Ім'я Прізвище">
+
+        <input type="submit" value="Оновити">
+    </form>
+
+    <!-- Графіки -->
+    <div>
+        <h2>Середня сума позики за місяць</h2>
+        {{ graph_avg_loan|safe }}
+    </div>
+
+    <div>
+        <h2>Кількість предметів застави за клієнтами</h2>
+        {{ graph_items|safe }}
+    </div>
+
+    <div>
+        <h2>Кількість позик за відсотковими ставками</h2>
+        {{ graph_interest|safe }}
+    </div>
+
+    <div>
+        <h2>Мінімальна та максимальна сума позики для кожного клієнта</h2>
+        {{ graph_min_max|safe }}
+    </div>
+
+    <div>
+        <h2>Загальна кількість позик за роками</h2>
+        {{ graph_loans_year|safe }}
+    </div>
+
+    <div>
+        <h2>Загальна сума транзакцій за співробітниками</h2>
+        {{ graph_transactions|safe }}
+    </div>
+</body>
+</html>

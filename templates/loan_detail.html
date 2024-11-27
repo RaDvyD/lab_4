@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Деталі позики</title>
+</head>
+<body>
+    <h1>Деталі позики</h1>
+    <p><strong>Клієнт:</strong> {{ loan.client.name }} {{ loan.client.surname }}</p>
+    <p><strong>Предмет:</strong> {{ loan.item.item_name }}</p>
+    <p><strong>Сума позики:</strong> {{ loan.loan_amount }} грн</p>
+    <p><strong>Відсоткова ставка:</strong> {{ loan.interest_rate }}%</p>
+    <p><strong>Дата початку:</strong> {{ loan.start_date }}</p>
+    <p><strong>Дата завершення:</strong> {{ loan.end_date }}</p>
+
+    <a href="{% url 'edit_loan' loan.id %}">Редагувати позику</a> |
+    <a href="{% url 'delete_loan' loan.id %}" onclick="return confirm('Ви впевнені, що хочете видалити цю позику?');">Видалити позику</a>
+
+    <br><br>
+    <a href="{% url 'loans_list' %}">Повернутися до списку позик</a>
+</body>
+</html>

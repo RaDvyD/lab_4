@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редагувати клієнта</title>
+</head>
+<body>
+    <h1>Редагувати клієнта</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Ім'я:</label><input type="text" name="name" value="{{ client.name }}"><br>
+        <label>Прізвище:</label><input type="text" name="surname" value="{{ client.surname }}"><br>
+        <label>Адреса:</label><input type="text" name="address" value="{{ client.address }}"><br>
+        <label>Телефон:</label><input type="text" name="phone_number" value="{{ client.phone_number }}"><br>
+        <label>Номер паспорта:</label><input type="text" name="passport_number" value="{{ client.passport_number }}"><br>
+        <input type="submit" value="Зберегти">
+    </form>
+    <a href="{% url 'clients_list' %}">Повернутися до списку клієнтів</a>
+</body>
+</html>

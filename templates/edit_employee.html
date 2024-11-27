@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редагувати співробітника</title>
+</head>
+<body>
+    <h1>Редагувати співробітника</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Ім'я:</label><input type="text" name="name" value="{{ employee.name }}"><br>
+        <label>Посада:</label><input type="text" name="position" value="{{ employee.position }}"><br>
+        <label>Телефон:</label><input type="text" name="phone_number" value="{{ employee.phone_number }}"><br>
+        <input type="submit" value="Зберегти">
+    </form>
+    <a href="{% url 'employees_list' %}">Повернутися до списку співробітників</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!-- pawnshop_app/templates/clients.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список клієнтів</title>
+</head>
+<body>
+    <h1>Клієнти</h1>
+    <a href="{% url 'add_client' %}">Додати клієнта</a>
+    <ul>
+        {% for client in clients %}
+        <li>
+            <a href="{% url 'client_detail' client.id %}">
+                {{ client.name }} {{ client.surname }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
