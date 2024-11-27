@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Деталі клієнта</title>
+</head>
+<body>
+    <h1>Деталі клієнта</h1>
+    <p><strong>Ім'я:</strong> {{ client.name }}</p>
+    <p><strong>Прізвище:</strong> {{ client.surname }}</p>
+    <p><strong>Адреса:</strong> {{ client.address }}</p>
+    <p><strong>Телефон:</strong> {{ client.phone_number }}</p>
+    <p><strong>Номер паспорта:</strong> {{ client.passport_number }}</p>
+    
+    <a href="{% url 'edit_client' client.id %}">Редагувати клієнта</a> |
+    <a href="{% url 'delete_client' client.id %}" onclick="return confirm('Ви впевнені, що хочете видалити цього клієнта?');">Видалити клієнта</a>
+    
+    <br><br>
+    <a href="{% url 'clients_list' %}">Повернутися до списку клієнтів</a>
+</body>
+</html>

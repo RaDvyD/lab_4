@@ -1,0 +1,9 @@
+<h2>Список предметів застави</h2>
+<ul>
+    {% for item in items %}
+        <li>
+            <a href="{% url 'pawned_item_detail' item.id %}">{{ item.item_name }}</a> ({{ item.client.name }} {{ item.client.surname }})
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_pawned_item' %}">Додати новий предмет застави</a>

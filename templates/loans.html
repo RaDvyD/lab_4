@@ -1,0 +1,22 @@
+<!-- pawnshop_app/templates/loans.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список позик</title>
+</head>
+<body>
+    <h1>Позики</h1>
+    <a href="{% url 'add_loan' %}">Додати позику</a>
+    <ul>
+        {% for loan in loans %}
+        <li>
+            <a href="{% url 'loan_detail' loan.id %}">
+                Позика №{{ loan.id }} для {{ loan.client.name }} {{ loan.client.surname }} - {{ loan.loan_amount }} грн
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">На головну</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Деталі предмету застави</title>
+</head>
+<body>
+    <h1>Деталі предмету застави</h1>
+    <p><strong>Назва:</strong> {{ item.item_name }}</p>
+    <p><strong>Опис:</strong> {{ item.description }}</p>
+    <p><strong>Вартість:</strong> {{ item.value }} грн</p>
+    <p><strong>Дата застави:</strong> {{ item.pawn_date }}</p>
+    <p><strong>Клієнт:</strong> {{ item.client.name }} {{ item.client.surname }}</p>
+    
+    <a href="{% url 'edit_pawned_item' item.id %}">Редагувати предмет</a> |
+    <a href="{% url 'delete_pawned_item' item.id %}" onclick="return confirm('Ви впевнені, що хочете видалити цей предмет?');">Видалити предмет</a>
+
+    <br><br>
+    <a href="{% url 'pawned_items_list' %}">Назад до списку предметів</a>
+</body>
+</html>
