@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Головна сторінка Ломбарду</title>
+</head>
+<body>
+    <h1>Ласкаво просимо на головну сторінку Ломбарду</h1>
+    <p>Тут можна переглядати інформацію про клієнтів, позики, транзакції і багато іншого.</p>
+    
+    <a href="{% url 'clients_list' %}">Переглянути клієнтів</a>
+    <a href="{% url 'pawned_items_list' %}">Переглянути предмети застави</a>
+    <a href="{% url 'employees_list' %}">Переглянути співробітників</a>
+    <a href="{% url 'loans_list' %}">Переглянути позики</a>
+    <a href="{% url 'transactions_list' %}">Переглянути транзакції</a>
+</body>
+</html>

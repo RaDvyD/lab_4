@@ -1,0 +1,22 @@
+<!-- pawnshop_app/templates/transactions.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список транзакцій</title>
+</head>
+<body>
+    <h1>Транзакції</h1>
+    <a href="{% url 'add_transaction' %}">Додати транзакцію</a>
+    <ul>
+        {% for transaction in transactions %}
+        <li>
+            <a href="{% url 'transaction_detail' transaction.id %}">
+                Транзакція №{{ transaction.id }} - {{ transaction.amount }} грн - {{ transaction.transaction_date }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/">На головну</a>
+</body>
+</html>

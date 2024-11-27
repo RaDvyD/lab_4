@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Деталі співробітника</title>
+</head>
+<body>
+    <h1>Деталі співробітника</h1>
+    <p><strong>Ім'я:</strong> {{ employee.name }}</p>
+    <p><strong>Посада:</strong> {{ employee.position }}</p>
+    <p><strong>Телефон:</strong> {{ employee.phone_number }}</p>
+    
+    <!-- Редагування та видалення співробітника -->
+    <a href="{% url 'edit_employee' employee.id %}">Редагувати співробітника</a> |
+    <a href="{% url 'delete_employee' employee.id %}" onclick="return confirm('Ви впевнені, що хочете видалити цього співробітника?');">Видалити співробітника</a>
+    
+    <br><br>
+    <a href="{% url 'employees_list' %}">Повернутися до списку співробітників</a>
+</body>
+</html>

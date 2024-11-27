@@ -1,0 +1,21 @@
+<!-- pawnshop_app/templates/add_client.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Додати клієнта</title>
+</head>
+<body>
+    <h1>Додати клієнта</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label>Ім'я:</label><input type="text" name="name"><br>
+        <label>Прізвище:</label><input type="text" name="surname"><br>
+        <label>Адреса:</label><input type="text" name="address"><br>
+        <label>Телефон:</label><input type="text" name="phone_number"><br>
+        <label>Номер паспорта:</label><input type="text" name="passport_number"><br>
+        <input type="submit" value="Додати">
+    </form>
+    <a href="{% url 'clients_list' %}">Повернутися до списку клієнтів</a>
+</body>
+</html>
