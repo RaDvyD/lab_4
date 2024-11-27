@@ -1,0 +1,66 @@
+це виведе статистику по сумі позики в консоль
+
+curl -H "Authorization: Token 777aced20de6ab58029ee1dfbb931878412c8965" http://127.0.0.1:8000/api/analytics/loan-amount-statistics/
+
+
+Отримати загальну кількість предметів застави за клієнтами:
+
+curl -H "Authorization: Token 777aced20de6ab58029ee1dfbb931878412c8965" http://127.0.0.1:8000/api/analytics/total-pawned-items-by-client/
+
+Отримати загальну суму транзакцій за співробітниками:
+
+curl -H "Authorization: Token 777aced20de6ab58029ee1dfbb931878412c8965" http://127.0.0.1:8000/api/analytics/total-transactions-by-employee/
+
+Отримати кількість позик за відсотковими ставками:
+
+curl -H "Authorization: Token 777aced20de6ab58029ee1dfbb931878412c8965" http://127.0.0.1:8000/api/analytics/loans-count-by-interest-rate/
+
+Отримати мінімальну та максимальну суму позики для кожного клієнта:
+
+curl -H "Authorization: Token 777aced20de6ab58029ee1dfbb931878412c8965" http://127.0.0.1:8000/api/analytics/min-max-loan-amount-per-client/
+
+Отримати загальну кількість позик за роками:
+
+curl -H "Authorization: Token 777aced20de6ab58029ee1dfbb931878412c8965" http://127.0.0.1:8000/api/analytics/total-loans-per-year/
+
+це виведе статистику по сумі позики в браузері
+ http://localhost:8000/api/analytics/loan-amount-statistics/
+
+
+
+Статистика суми транзакцій :
+
+curl -H "Authorization: Token 777aced20de6ab58029ee1dfbb931878412c8965" http://127.0.0.1:8000/api/analytics/transaction-amount-statistics/
+
+Статистика вартості предметів застави:
+
+curl -H "Authorization: Token 777aced20de6ab58029ee1dfbb931878412c8965" http://127.0.0.1:8000/api/analytics/pawneditem-value-statistics/
+
+
+curl -H "Authorization: Token 777aced20de6ab58029ee1dfbb931878412c8965" http://127.0.0.1:8000/api/performance/
+
+
+це виведе статистику графіків в браузері
+
+http://127.0.0.1:8000/pawnshop/dashboard/
+
+http://127.0.0.1:8000/pawnshop/dashboard_bokeh/
+
+http://127.0.0.1:8000/pawnshop/dashboard_performance/
+
+
+
+
+
+
+видвлання даних з бази даних через команду python manage.py shell
+
+from pawnshop_app.models import Client, Employee, PawnedItem, Loan, Transaction
+
+Transaction.objects.all().delete()
+Loan.objects.all().delete()
+PawnedItem.objects.all().delete()
+Employee.objects.all().delete()
+Client.objects.all().delete()
+
+print("All test data has been deleted!")
